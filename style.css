@@ -1,0 +1,47 @@
+/* D3 CSS BEGIN*/
+.text {
+    stroke: #000;
+    font: 15px sans-serif;
+    pointer-events: none;
+}
+
+.node text {
+    stroke:#333;
+    cursos:pointer;
+}
+
+.node circle{
+    stroke:#fff;
+    stroke-width:3px;
+    fill:black;
+}
+
+.node2 circle{
+    stroke:#fff;
+    stroke-width:3px;
+    fill:green;
+}
+/* D3 SAMPLE CSS END*/
+
+.link-line {
+    fill: none;
+    stroke: #adadad;
+    stroke-width: 1.5px;
+}
+.link-line2 {
+    fill: none;
+    stroke: #c8f8b9;
+    stroke-width: 1.5px;
+}
+
+
+button{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
