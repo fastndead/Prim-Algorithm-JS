@@ -45,3 +45,33 @@ button{
     display: inline-block;
     font-size: 16px;
 }
+
+input{
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+div{
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+div.tooltip:hover span{
+    display			: inline;
+    position		: absolute;
+    background		: #ffffff;
+    border			: 1px solid #cccccc;
+    color			: #6c6c6c;
+}
+
+span{
+    display: none;
+    padding			: 2px 3px;
+    margin-left		: 8px;
+    width			: 130px;
+}

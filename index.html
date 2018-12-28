@@ -6,10 +6,16 @@
     <title>Title</title>
 </head>
 <body>
+<button id="step-foreward-btn" onclick="step()"> Step forward </button>
+<button id="step-back-btn" onclick="reset()"> Reset </button>
+<button id="change-graph-btn" onclick="change()"> Change Samples Graphs</button>
+<div class="tooltip">
+    <input id="json-url-input" type="text" name="url" >
+    <span id="tooltip-text">In order to set your own graph, post a link on json object, that describes your one. To see the structure of graph obect, type "json" in console.</span>
+</div>
+<button id="change-graph-from-input-btn" onclick="changeFromInput()"> Change Graph From Json </button>
 <script src="https://d3js.org/d3.v2.min.js?2.9.3"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="script.js"></script>
-<button id="step-foreward-btn" onclick="step()"> Step forward </button>
-<button id="step-back-btn" onclick="reset()"> Reset </button>
 </body>
 </html>

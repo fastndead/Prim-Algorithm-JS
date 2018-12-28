@@ -1,26 +1,30 @@
 
+
+
 var json = {
     "nodes":[
-        {"name":"A","group":0,index:0, visited: false},
-        {"name":"C","group":0,index:1, visited: false},
-        {"name":"B","group":0,index:2, visited: false},
-        {"name":"D","group":0,index:3, visited: false},
-        {"name":"E","group":0,index:4, visited: false},
-        {"name":"F","group":0,index:5, visited: false},
-        {"name":"G","group":0,index:6, visited: false},
+        {"name":"A","group":0,"index":0, "visited": false},
+        {"name":"C","group":0,"index":1, "visited": false},
+        {"name":"B","group":0,"index":2, "visited": false},
+        {"name":"D","group":0,"index":3, "visited": false},
+        {"name":"E","group":0,"index":4, "visited": false},
+        {"name":"F","group":0,"index":5, "visited": false},
+        {"name":"G","group":0,"index":6, "visited": false},
     ],
     "links":[
-        {"source":0,"target":2,"weight":7},
-        {"source":0,"target":3,"weight":5},
-        {"source":2,"target":1,"weight":8},
-        {"source":2,"target":4,"weight":7},
-        {"source":3,"target":4,"weight":15},
-        {"source":3,"target":5,"weight":6},
-        {"source":6,"target":5,"weight":11},
-        {"source":6,"target":4,"weight":9},
-        {"source":1,"target":4,"weight":5},
-        {"source":5,"target":4,"weight":8},
-        {"source":3,"target":2,"weight":9},
+        {"source":0,"target":2,"weight": 12},
+        {"source":0,"target":3,"weight": 1},
+        {"source":0,"target":4,"weight": 10},
+        {"source":1,"target":6,"weight": 2},
+        {"source":6,"target":5,"weight": 5},
+        {"source":3,"target":5,"weight": 6},
+        {"source":3,"target":4,"weight": 7},
+        {"source":3,"target":4,"weight": 7},
+        {"source":3,"target":6,"weight": 3},
+        {"source":3,"target":6,"weight": 3},
+        {"source":1,"target":5,"weight": 9},
+        {"source":4,"target":6,"weight": 19},
+        {"source":2,"target":3,"weight": 10},
     ]
 };
 
@@ -30,7 +34,24 @@ var SpanningTree;
 window.onload = function () {
     reset()
 };
+var url = 'https://api.myjson.com/bins/16c0bc';
 
+
+function change() {
+    if (url === 'https://api.myjson.com/bins/16c0bc')
+    {
+        url ='https://api.myjson.com/bins/1ambvc'
+    }
+    else {
+        url = 'https://api.myjson.com/bins/16c0bc'
+    }
+    reset();
+}
+
+function changeFromInput(){
+    url = document.getElementById("json-url-input").value;
+    reset();
+}
 
 function  init() {
     var width = window.innerWidth,
@@ -184,6 +205,17 @@ function step() {
 }
 
 function reset() {
+    $.ajax({
+        url: url,
+        dataType: 'json',
+        success: function(recievedJson) {
+            json = recievedJson;
+        },
+        error: function () {
+            console("Something went wrong");
+        }
+    });
+
     d3.select("svg").remove();
     init();
     prims();
